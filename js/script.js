@@ -16,7 +16,7 @@ form.addEventListener('submit', (e) => {
 
   let carregando = `<p>carregando...</p>`
 
-  let pronto = `<p>pronto</p>`
+  let pronto = `<p>Pronto! Aguarde nossas promoções!</p>`
 
   content.innerHTML = carregando
 

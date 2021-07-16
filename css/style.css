@@ -1,38 +1,150 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+body{
+  background: black;
 }
 
-.section-container{
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+ul{list-style: none;}
+
+a{text-decoration: none;}
+
+.img{
+  max-width: 100%;
+}
+
+main{
+  grid-area: main; 
+  height: 200px;
+  background: bkack;
+  }
+
+.container{
+  display: grid;
+  grid-template-columns: 75% 20%;
+  justify-content: space-between;
+  padding: 10px 5%;
+  grid-template-areas: 
+    "header header"
+    "main aside"
+    ;
+}
+
+/********* inicio header ************/
+header{
+  grid-area: header;
+  display: grid; 
+  grid-template-columns: 20% 50% 30%;
+  grid-template-areas: 
+  "logo search nav--right" 
+  "nav nav nav"
+  "ads ads ads"   
+  ;
   align-items: center;
+  background: black;
+  color: lightgreen;
 }
 
-.background-section-one{
-  background-image: url(../assets/bg.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
+/* header sub-divisão*/
+.logo{
+  grid-area: logo;
+  padding: 0 5%;
+  width: 80px;
+  height: 160x;
 }
-.background-section-two{
-  background-image: url(../assets/bg2.jpeg);
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
+  
+.search{
+  grid-area: search;
+  padding-right: 5%;
+  margin-top: 0 5px;
+  margin-left: 350px
+  }
+
+.search input[type='search']{
+  display: inline-block;
+  width: 32%;
+  height: 33px;
+  border-radius: 5px;
+  margin-right: 200px;
+  font-size: 18px;
+  padding: 0 3 px;
+  position:fixed;
+  top: 102px;
+  left: 770px;
+  background: white
 }
 
+.search button{
+  display:inline-block; 
+  width: 3%;
+  height: 33px;
+  border-image: round;
+  border-radius: 5px;
+  vertical-align: top;
+  cursor: pointer;
+  position:fixed;
+  top: 104px;
+  right: 104px;
+}
+
+.nav--right{
+  grid-area: nav--right;
+  text-align: left;
+  font-size: 20px;
+  color: lightgreen;
+}
+
+.nav--right li{
+  display: inline-block;
+  font-weight: bold;
+   margin: 0 20px;
+}
+
+nav{
+  grid-area: nav;
+  background-color: black;
+  color: lightgreen;
+}
+
+nav li{
+  display:inline-block;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 10px;
+}
+/********* fim header ************/
+
+/********* Inicio Main ************/
 .card-container{
-  background: #fff;
+  background: limegreen;
   border-radius: 25px;
-  padding: 25px;
+  padding: 10px;
   max-width: 450px;
+  position: relative;
+  top: 50px;
+  left: 700px;
+}
+
+.blackfriday{
+  max-width: 100%;
+  display:inline-block; 
+  width: 3%;
+  height: 33px;
+  border-image: round;
+  border-radius: 5px;
+  vertical-align: top;
+  cursor: pointer;
+  position:relative;
+  top: 50px;
+  left: 62px;
+}
+
+form{
+  display: grid;
 }
 
 input{
@@ -42,19 +154,216 @@ input{
   text-align: center;
   border-radius: 12px;
   background: #000;
-  color: #fff
+  color: lightgreen;
+  position: relative;
+  font-size: medium;
+}
+/********* FIM Main ************/
+
+/********* ads colar imagem? ************/
+.blinkCursor{
+  grid-area: ads;
+  background-color: black;
+  font-size: 20px;
+  color: lightgreen;;
+  text-align: center;
+  margin-top: 15px;
+}
+/********* FIM ads colar imagem? ************/
+.line{
+  border-right: 2px solid rgba (255, 255, 255, 0.75);
+  color: limegreen;
+  font-size: 1em;
+  font-style: oblique;
+  margin: 0 auto;  
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+ @keyframes blinkCursor{
+   from {
+    border-right-color: yello;
+   }
+   to {
+    border-right-color: transparent;
+   }
+ }  
+
+ .typing-animation{
+  animation: blinkCursor 500ms steps(40) infinite normal, typing 5s steps(40) 5s normal; 
+  animation-iteration-count:infinite;
+ }
+
+ @keyframes typing{
+  from {
+    width: 0;
+  }
+  to{
+    Width: 18em;
+  }
+ }
+
+footer{
+  text-align: left;
+  font-size: 14px;
+  color: lightgreen;
+  position: fixed;
+  top: 630px;
+ }
+  
+.container{
+  display: grid;
+  grid-template-columns: 75% 20%;
+  justify-content: space-between;
+  padding: 10px 5%;
+  grid-template-areas: 
+    "header header"
+    "main aside"
+    ;
+}
+
+/********* inicio header ************/
+header{
+  grid-area: header;
+  display: grid; 
+  grid-template-columns: 20% 50% 30%;
+  grid-template-areas: 
+  "logo search nav--right" 
+  "nav nav nav"
+  "ads ads ads"   
+  ;
+  align-items: center;
+  background: black;
+  color: lightgreen;
+}
+
+/* header sub-divisão*/
+.logo{
+  grid-area: logo;
+  padding: 0 5%;
+  width: 80px;
+  height: 160x;
+}
+
+.nav--right{
+  grid-area: nav--right;
+  text-align: left;
+  font-size: 20px;
+  color: lightgreen;
+}
+
+.nav--right li{
+  display: inline-block;
+  font-weight: bold;
+   margin: 0 20px;
+}
+
+nav{
+  grid-area: nav;
+  background-color: black;
+  color: lightgreen;
+}
+
+nav li{
+  display:inline-block;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 10px;
+}
+/********* fim header ************/
+
+/********* Inicio Main ************/
+.card-container{
+  background: limegreen;
+  border-radius: 25px;
+  padding: 10px;
+  max-width: 450px;
+  position: relative;
+  top: 50px;
+  left: 700px;
+}
+
+.blackfriday{
+  max-width: 100%;
+  display:inline-block; 
+  width: 3%;
+  height: 33px;
+  border-image: round;
+  border-radius: 5px;
+  vertical-align: top;
+  cursor: pointer;
+  position:relative;
+  top: 50px;
+  left: 62px;
 }
 
 form{
   display: grid;
 }
 
-footer{
-  height: 150px;
-  padding: 25px;
+input{
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
   text-align: center;
-  background-color: #000;
-  color: #fff;
+  border-radius: 12px;
+  background: #000;
+  color: lightgreen;
+  position: relative;
+  font-size: medium;
 }
+/********* FIM Main ************/
+
+/********* ads colar imagem? ************/
+.blinkCursor{
+  grid-area: ads;
+  background-color: black;
+  font-size: 20px;
+  color: lightgreen;;
+  text-align: center;
+  margin-top: 15px;
+}
+/********* FIM ads colar imagem? ************/
+.line{
+  border-right: 2px solid rgba (255, 255, 255, 0.75);
+  color: limegreen;
+  font-size: 1em;
+  font-style: oblique;
+  margin: 0 auto;  
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+ @keyframes blinkCursor{
+   from {
+    border-right-color: yello;
+   }
+   to {
+    border-right-color: transparent;
+   }
+ }  
+
+ .typing-animation{
+  animation: blinkCursor 500ms steps(40) infinite normal, typing 5s steps(40) 5s normal; 
+  animation-iteration-count:infinite;
+ }
+
+ @keyframes typing{
+  from {
+    width: 0;
+  }
+  to{
+    Width: 18em;
+  }
+ }
+
+footer{
+  font-size: 14px;
+  color: rgb(91, 95, 91);
+  margin-top: 100px;
+ }
+
+
+
 
 
